@@ -80,4 +80,8 @@ defmodule Handler.WeberReqHandler.Result do
   defp request({:not_found, data, _headers}, _app) do
     {:not_found, 404, data, [{"Content-Type", "text/html"}]}
   end
+
+  defp request({:forbidden, data, _headers}, _app) do
+    {:forbidden, 403, data, [{"Content-Type", "text/html"}]}
+  end
 end
